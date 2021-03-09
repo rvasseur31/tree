@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IContact } from '../resources/contact/contact.interface';
 
 @Component({
   selector: 'app-contact',
@@ -7,19 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  firstName: string = "";
-  lastName: string = "";
-  email: string = "";
-  subject: string = "";
-  message: string = "";
+  contact: IContact = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: ""
+  }
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  sendContactForm(){
-    console.log(this.firstName)
+  sendContactForm() {
+    console.log(this.contact)
   }
 
 }
