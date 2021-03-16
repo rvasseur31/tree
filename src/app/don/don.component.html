@@ -1,28 +1,40 @@
 <div class="bg">
 
     <div style="display:flex;width:100%;">
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword2">Argent</label>
-                <input class="form-control" type="text" placeholder="999">
-              </div>
-              <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                  <label class="form-check-label" for="defaultCheck1">
-                    Je consent à donner mon argent.
-                  </label>
-                </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-        </form> 
+      <form action="#" method="post">
+        <h2>FAIRE UN DON</h2>
+        <p class="amount">
+          <label for="usd">MONTANT :</label>
+          <input type="radio" name="usd" id="usd" checked="">
+          1 €
+          <input type="radio" name="usd" id="usd">
+          5 €
+          <input type="radio" name="usd" id="usd">
+          10 €</p>
+        <p class="type">
+          <label for="type">TYPE :</label>
+          <input type="radio" name="time" id="type" checked="">
+          Une seule fois
+          <input type="radio" name="time" id="type">
+          Mensuel
+          <input type="radio" name="time" id="type">
+          Annuel <br>
+        </p>
+        <h5>
+          <input type="text" placeholder="Name">
+          <input type="email" placeholder="Email">
+        </h5>
+        <h4>
+          <select>
+            <option>I Want To Donate For 1</option>
+            <option>I Want To Donate For 2</option>
+            <option>I Want To Donate For 3</option>
+          </select>
+        </h4>
+        <input type="submit" value="JE DONNE">
+      </form>
     </div>
+
+
 
 </div>

@@ -5,7 +5,8 @@ import { DonComponent } from './don/don.component';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
-  { path: '/don', component: DonComponent }
+  { path: 'accueil', component: AccueilComponent },
+  { path: 'don', component: DonComponent }
 ];
 
 @NgModule({
