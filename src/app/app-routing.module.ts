@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '**', component: PageNotFoundComponent },
   { path: 'don', component: DonComponent },
   {
     path: 'admin',
@@ -22,7 +21,8 @@ const routes: Routes = [
   {
     path: 'contact',
     loadChildren: () => import('./contact/contact.module').then(module => module.ContactModule) 
-  }
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
