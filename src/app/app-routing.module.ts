@@ -4,13 +4,24 @@ import { DonComponent } from './don/don.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
+import { AuthGuard } from './resources/auth/auth.guard';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '**', component: PageNotFoundComponent },
-  { path: 'don', component: DonComponent }
+  { path: 'don', component: DonComponent },
+  {
+    canLoad: [AuthGuard]
+    loadChildren: () => import('./admin/admin.module').then(module => module.AdminModule),
+    path: 'admin',
+  {
+  },
+    loadChildren: () => import('./contact/contact.module').then(module => module.ContactModule) 
+    path: 'contact',
+  }
 ];
 
 @NgModule({
