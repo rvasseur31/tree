@@ -130,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "tree"
+  "defaultProject": "tree",
+  "cli": {
+    "analytics": "332d72ed-11a6-476f-bcf2-0bbef8c2dfcc"
+  }
 }
