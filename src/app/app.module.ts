@@ -11,6 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DonComponent } from './don/don.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DepotComponent } from './depot/depot.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PageNotFoundComponent,
     AccueilComponent,
     DonComponent,
-    ContactComponent
+    ContactComponent,
+    DepotComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './resources/auth/auth.guard';
 import { ContactComponent } from './contact/contact.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { DepotComponent } from './depot/depot.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
     path: '**',
     component: PageNotFoundComponent
   },
+  {
+    path: 'depot',
+    component: DepotComponent
+  }
 ];
 
 @NgModule({

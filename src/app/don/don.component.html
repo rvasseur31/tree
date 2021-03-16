@@ -1,38 +1,88 @@
 <div class="bg">
 
     <div style="display:flex;width:100%;">
-      <form action="#" method="post">
-        <h2>FAIRE UN DON</h2>
-        <p class="amount">
-          <label for="usd">MONTANT :</label>
-          <input type="radio" name="usd" id="usd" checked="">
-          1 €
-          <input type="radio" name="usd" id="usd">
-          5 €
-          <input type="radio" name="usd" id="usd">
-          10 €</p>
-        <p class="type">
-          <label for="type">TYPE :</label>
-          <input type="radio" name="time" id="type" checked="">
-          Une seule fois
-          <input type="radio" name="time" id="type">
-          Mensuel
-          <input type="radio" name="time" id="type">
-          Annuel <br>
-        </p>
-        <h5>
-          <input type="text" placeholder="Name">
-          <input type="email" placeholder="Email">
-        </h5>
-        <h4>
-          <select>
-            <option>I Want To Donate For 1</option>
-            <option>I Want To Donate For 2</option>
-            <option>I Want To Donate For 3</option>
-          </select>
-        </h4>
-        <input type="submit" value="JE DONNE">
-      </form>
+      <div class="container don">
+        <form class="form-don" style="width: 500px;" action="#">
+          <h2>Faire un don</h2>
+            <div class="row">
+
+              
+
+              <fieldset>
+                <div class="form-group">
+                    <label for="cc_name">Titulaire de la carte</label>
+                    <input type="text" class="form-control" id="cc_name" pattern="\w+ \w+.*" title="First and last name" required="required" placeholder="Mr/Mme">
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-12">Numéro de la carte</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="First four digits" required="">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Second four digits" required="">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Third four digits" required="">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Fourth four digits" required="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-12">Date d'expiration</label>
+                    <div class="col-md-9">
+                        <select class="form-control" name="cc_exp_mo">
+                            <option value="01">Janvier</option>
+                            <option value="02">Février</option>
+                            <option value="03">Mars</option>
+                            <option value="04">Avril</option>
+                            <option value="05">May</option>
+                            <option value="06">Juin</option>
+                            <option value="07">Juillet</option>
+                            <option value="08">Août</option>
+                            <option value="09">Septembre</option>
+                            <option value="10">Octobre</option>
+                            <option value="11">Novembre</option>
+                            <option value="12">Décembre</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control" name="cc_exp_yr">
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                            <option>2022</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-12">Card CVV</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required="">
+                    </div>
+                </div>
+    
+
+                <div class="form-group">
+                    <label for="cc_name">Montant du don</label>
+                    <input type="text" class="form-control" id="cc_name" pattern="\w+ \w+.*" title="First and last name" required="required">
+                    <span class="px-2 small text-muted font-weight-bold text-muted">Veuillez entrer un montant valide, chien.</span>
+                </div>
+                
+                <div class="form-group">
+                  <div class="col-md-12 text-xs-right">
+                      <button type="button" class="btn btn-default">Cancel</button>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+              </div>
+            </fieldset>
+
+            </div>
+        </form>
+    </div>
     </div>
 
 
