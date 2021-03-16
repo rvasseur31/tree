@@ -9,6 +9,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AccueilComponent } from './accueil/accueil.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DonComponent } from './don/don.component';
+import { ContactComponent } from './contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,15 @@ import { DonComponent } from './don/don.component';
     RegisterComponent,
     PageNotFoundComponent,
     AccueilComponent,
-    DonComponent
+    DonComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
