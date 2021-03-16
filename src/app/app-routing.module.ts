@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './resources/auth/auth.guard';
 import { ContactComponent } from './contact/contact.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 const routes: Routes = [
   {
@@ -30,13 +31,13 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
+    path: '',
+    component: AccueilComponent
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   },
-  {
-    path: '',
-    component: PageNotFoundComponent
-  }
 ];
 
 @NgModule({
