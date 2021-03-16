@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DonComponent } from './don/don.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RegisterComponent,
     PageNotFoundComponent
     AccueilComponent
+    DonComponent
   ],
   imports: [
     BrowserModule,
