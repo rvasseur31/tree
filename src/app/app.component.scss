@@ -1,20 +1,17 @@
-body {
-  min-height: 100vh;
-}
-}
 $marron: #7e5835;
 $vert: #629e2d;
-$background-color: #CDF1E3;
+$background-color: #cdf1e3;
 
 body {
+  min-height: 100vh;
   background-color: #ffffff;
 }
 
 .navbar {
-  background-color: #F8FBE8;
+  background-color: #f8fbe8;
 }
 
-.nav-link{
+.nav-link {
   color: $marron !important;
   font-family: Lora;
   font-size: 20px;
@@ -26,6 +23,5 @@ body {
 }
 
 footer {
-  background-color: #F8FBE8;
+  background-color: #f8fbe8;
 }
-

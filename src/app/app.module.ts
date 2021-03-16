@@ -15,8 +15,8 @@ import { DonComponent } from './don/don.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    PageNotFoundComponent
-    AccueilComponent
+    PageNotFoundComponent,
+    AccueilComponent,
     DonComponent
   ],
   imports: [
