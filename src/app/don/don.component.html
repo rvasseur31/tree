@@ -2,36 +2,36 @@
 
     <div style="display:flex;width:100%;">
       <div class="container don">
-        <form class="form-don" style="width: 500px;" action="#">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-don" style="width: 500px;">
           <h2>Faire un don</h2>
             <div class="row">
-
-              
-
               <fieldset>
                 <div class="form-group">
-                    <label for="cc_name">Titulaire de la carte</label>
-                    <input type="text" class="form-control" id="cc_name" pattern="\w+ \w+.*" title="First and last name" required="required" placeholder="Mr/Mme">
+                    <label for="name" class="control-label">Titulaire de la carte</label>
+                    <input formControlName="name" id="name" type="text" class="form-control" id="name" ngModel required placeholder="Mr/Mme">
                 </div>
+                 
                 <div class="form-group row">
                     <label class="col-md-12">Numéro de la carte</label>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="First four digits" required="">
+                        <input formControlName="numero1" type="text" class="form-control" maxlength="4" placeholder="0000">
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Second four digits" required="">
+                        <input formControlName="numero2" type="text" class="form-control" maxlength="4" placeholder="0000">
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Third four digits" required="">
+                        <input formControlName="numero3" type="text" class="form-control" maxlength="4"placeholder="0000">
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" autocomplete="off" maxlength="4" pattern="\d{4}" title="Fourth four digits" required="">
+                        <input  formControlName="numero4" type="text" class="form-control" maxlength="4" placeholder="0000">
                     </div>
                 </div>
+                
                 <div class="form-group row">
                     <label class="col-md-12">Date d'expiration</label>
                     <div class="col-md-9">
-                        <select class="form-control" name="cc_exp_mo">
+                        <select class="form-control" name="cc_exp_mo" formControlName="exp_mois">
+                            <option value="" selected disabled hidden>Choose here</option>
                             <option value="01">Janvier</option>
                             <option value="02">Février</option>
                             <option value="03">Mars</option>
@@ -47,35 +47,36 @@
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <select class="form-control" name="cc_exp_yr">
-                            <option>2016</option>
-                            <option>2017</option>
-                            <option>2018</option>
-                            <option>2019</option>
-                            <option>2020</option>
-                            <option>2021</option>
-                            <option>2022</option>
+                        <select class="form-control" name="cc_exp_yr" formControlName="exp_annee">
+                            <option value="01">2021</option>
+                            <option value="02">2022</option>
+                            <option value="03">2023</option>
+                            <option value="04">2024</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-md-12">Card CVV</label>
+                    <label for="ccv" class="col-md-12">Card CCV</label>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required="">
+                        <input type="text" class="form-control" maxlength="3" formControlName="ccv" placeholder="000">
                     </div>
                 </div>
     
 
                 <div class="form-group">
-                    <label for="cc_name">Montant du don</label>
-                    <input type="text" class="form-control" id="cc_name" pattern="\w+ \w+.*" title="First and last name" required="required">
+                    <label for="montant" class="control-label">Montant du don</label>
+                    <input formControlName="montant" name="montant" type="text" class="form-control" id="montant" ngModel required>
                     <span class="px-2 small text-muted font-weight-bold text-muted">Veuillez entrer un montant valide, chien.</span>
                 </div>
                 
                 <div class="form-group">
                   <div class="col-md-12 text-xs-right">
-                      <button type="button" class="btn btn-default">Cancel</button>
-                      <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-default" (click)="onReset(f)">Cancel</button>
+                    <button id="send-button" type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
+                    
+                    <div class="alert alert-success mt-3" style="display:none;" role="alert">
+                        This is a success alert—check it out!
+                      </div>
                   </div>
               </div>
             </fieldset>
@@ -84,7 +85,4 @@
         </form>
     </div>
     </div>
-
-
-
 </div>
