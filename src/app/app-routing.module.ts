@@ -36,12 +36,16 @@ const routes: Routes = [
     component: AccueilComponent
   },
   {
-    path: '**',
-    component: PageNotFoundComponent
-  },
-  {
     path: 'depot',
     component: DepotComponent
+  },
+  {
+    path: 'accueil',
+    component: AccueilComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 

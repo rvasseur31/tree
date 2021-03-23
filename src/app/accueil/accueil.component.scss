@@ -57,3 +57,44 @@ $background-color: #CDF1E3;
   font-family: Lora;
   font-size: 20px;
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+  .left-container {
+    width: 49% !important;
+    margin-right: 2%;
+  }
+  .right-container {
+    width: 49% !important;
+  }
+  .display-5{
+    font-size: 25px;
+  }
+  .container-object {
+    width: 100% !important;
+  }
+  .container-money {
+    width: 100% !important;
+  }
+  .button-give-object {
+    width: 80%;
+  }
+  .button-give-money {
+    width: 80%;
+  }
+  .first-container {
+    margin-top: 100px !important;
+  }
+}
+
+
+  
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+} 
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+  /* Styles */
+}

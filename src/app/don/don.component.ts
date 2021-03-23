@@ -53,14 +53,15 @@ export class DonComponent implements OnInit {
     });
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: { value: { [x: string]: any; }; }) {
     const name = form.value['name'];
     const montant = form.value['montant'];
     alert("Merci pour votre don de " + montant + "€");
-}
+  }
 
-  onReset(form: NgForm) {
+  onReset(form: { reset: () => void; }) {
     console.log("Reset !");
     form.reset();
   }
+  
 }

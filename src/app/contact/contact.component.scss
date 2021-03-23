@@ -1,23 +1,66 @@
-.form-container{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 150px;
-    width: 100%;
-    height: calc(100vh - 3.5rem);
-    form{
-        width: 50%;
-        border: 1px black solid;
-        border-radius: 10px;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .form-subject{
-            width: 100%;
-        }
-        textarea{
-            max-height: 250px;
-        }
-    }
+// .form-container{
+//     display: flex;
+//     justify-content: center;
+//     align-items: flex-start;
+//     margin-top: 150px;
+//     width: 100%;
+//     height: calc(100vh - 3.5rem);
+//     form{
+//         width: 50%;
+//         border: 1px black solid;
+//         border-radius: 10px;
+//         padding: 1rem;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         .form-subject{
+//             width: 100%;
+//         }
+//         textarea{
+//             max-height: 250px;
+//         }
+//     }
+// }
+
+$marron: #7e5835;
+$vert: #679F5A;
+$background-color: #CDF1E3;
+
+body{
+    padding:25px;
+    height: auto;
 }
+
+input:focus{
+     outline: none;
+ }
+ 
+ form{
+     margin-top: 199px;
+     margin-left:auto;
+     margin-right:auto;
+     padding:50px;
+     background:whitesmoke;
+     border-radius:5px;
+     position:relative;
+     font-family: 'Libre Franklin', sans-serif;
+ }
+
+ body, html {
+    height: auto;
+    margin: 0;
+  }
+  
+  .bg {
+    top: 0;
+    height: auto; 
+    min-height: calc(100vh - 0px);
+    background-image: url("../../assets/img/foret4.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .form-don {
+      margin-bottom: 10%;
+  }
