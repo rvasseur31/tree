@@ -1,6 +1,6 @@
 export interface IContact {
-    firstName: string;
-    lastName: string;
+    firstname: string;
+    lastname: string;
     email: string;
     subject: string;
     message: string;

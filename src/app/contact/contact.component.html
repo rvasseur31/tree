@@ -2,17 +2,17 @@
     <div style="display:flex;width:100%;">
         <div class="container don">
             <form class="form-don">
-                <h2 class="text-center">Déposer un objet</h2>
+                <h2 class="text-center">Contact</h2>
                 <div class="row">
                     <fieldset class="w-100">
                         <div class="form-group">
                             <label for="firstName" class="control-label">Prénom</label>
-                            <input [(ngModel)]="contact.firstName" name="firstName" type="text" class="form-control"
+                            <input [(ngModel)]="contact.firstname" name="firstName" type="text" class="form-control"
                                 id="firstName">
                         </div>
                         <div class="form-group">
                             <label for="lastName" class="control-label">Nom</label>
-                            <input [(ngModel)]="contact.lastName" name="lastName" type="text" class="form-control"
+                            <input [(ngModel)]="contact.lastname" name="lastName" type="text" class="form-control"
                                 id="lastName">
                         </div>
                         <div class="form-group">
@@ -32,9 +32,10 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-12 text-xs-right text-center">
-                        <button type="submit" class="btn btn-primary" (click)="sendContactForm()">Submit</button>
-                    </div>
-                </div>
+                                <button type="submit" class="btn btn-primary"
+                                    (click)="sendContactForm()">Submit</button>
+                            </div>
+                        </div>
                     </fieldset>
                 </div>
             </form>
