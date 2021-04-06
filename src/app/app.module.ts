@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DepotComponent } from './depot/depot.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CreditCardDirectivesModule } from 'angular-cc-library';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AccueilComponent,
     DonComponent,
     ContactComponent,
-    DepotComponent
+    DepotComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,11 +37,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    CreditCardDirectivesModule,
     ToastrModule.forRoot({
-      positionClass :'toast-bottom-right'
-    })
+      positionClass: 'toast-bottom-right',
+    }),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [CookieService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
