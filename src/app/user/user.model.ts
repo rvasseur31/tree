@@ -1,20 +1,20 @@
-export class User {
+export class IUser {
   id?: string;
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   email: string;
   phoneNumber: string;
   password: string;
 
   constructor(
-    firstname: string,
-    lastname: string,
+    firstName: string,
+    lastName: string,
     email: string,
     phoneNumber: string,
     password: string
   ) {
-    this.firstname = firstname;
-    this.lastname = lastname;
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.email = email;
     this.phoneNumber = phoneNumber;
     this.password = password;

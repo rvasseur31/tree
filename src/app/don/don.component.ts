@@ -63,5 +63,4 @@ export class DonComponent implements OnInit {
     console.log("Reset !");
     form.reset();
   }
-  
 }
