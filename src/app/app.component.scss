@@ -1,14 +1,14 @@
 $marron: #7e5835;
-$vert: #629e2d;
+$vert: #145f37;
 $background-color: #cdf1e3;
 
 body {
   min-height: 100vh;
-  background-color: #ffffff;
+  background-color: whitesmoke;
 }
 
 .navbar {
-  background-color: white;
+  background-color: whitesmoke;
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
@@ -19,14 +19,24 @@ body {
 }
 
 .nav-link {
-  color: $marron !important;
+  color: $vert;
   font-family: Lora;
   font-size: 20px;
 }
 
 .right-button {
-  color: $marron;
-  border-color: $marron;
+  color: $vert;
+  border-color: $vert;
+}
+.btn-nav {
+  color: $vert;
+  border-color: $vert;
+}
+
+.btn-outline-success:hover {
+  color: #fff !important;
+  background-color: $vert;
+  border-color: $vert;
 }
 
 footer {
@@ -34,6 +44,10 @@ footer {
   box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.75);
   -webkit-box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.75);
+}
+
+header {
+  height: 105px;
 }
 
 .navbar-toggler {

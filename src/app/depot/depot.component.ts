@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm } from  '@angular/forms';
 import { Validators } from '@angular/forms';
+import { AccountService } from '../_services';
 
 @Component({
   selector: 'app-depot',
@@ -15,7 +16,7 @@ export class DepotComponent implements OnInit {
   date!: FormControl;
   state!: FormControl;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private accountService: AccountService) { }
 
   ngOnInit(): void {
     this.createFormControls();
@@ -43,6 +44,8 @@ export class DepotComponent implements OnInit {
     const brand = form.value['brand'];
     const date = form.value['date'];
     const state = form.value['state'];
+    const user = this.accountService.userValue;
+    console.log(name, brand, date, state, user);
   }
 
   onReset(form: { reset: () => void; }) {

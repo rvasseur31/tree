@@ -1,5 +1,5 @@
 $marron: #7e5835;
-$vert: #629e2d;
+$vert: #145f37;
 $background-color: #CDF1E3;
 
 .first-container {
@@ -28,7 +28,7 @@ $background-color: #CDF1E3;
 }
 
 .left-container {
-  background-color: #679F5A;
+  background-color: $vert;
 }
 
 .right-container {

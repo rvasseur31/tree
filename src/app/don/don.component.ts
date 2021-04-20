@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm } from  '@angular/forms';
 import { Validators } from '@angular/forms';
+import { AccountService, AlertService } from '../_services';
 
 @Component({
   selector: 'app-don',
@@ -20,7 +21,11 @@ export class DonComponent implements OnInit {
   exp_mois!: FormControl;
   exp_annee!: FormControl;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private accountService: AccountService,
+    private alertService: AlertService
+    ) { }
 
   ngOnInit(): void {
     this.createFormControls();
@@ -56,7 +61,13 @@ export class DonComponent implements OnInit {
   onSubmit(form: { value: { [x: string]: any; }; }) {
     const name = form.value['name'];
     const montant = form.value['montant'];
-    alert("Merci pour votre don de " + montant + "€");
+
+    // GET USER INFO
+    // .email .username .id
+    const user = this.accountService.userValue;
+
+    // POST_(name, montant, email, ...)
+    alert("Merci pour votre don de " + montant + "€, Monsieur " + user.username);
   }
 
   onReset(form: { reset: () => void; }) {

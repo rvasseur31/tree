@@ -4,15 +4,15 @@ $background-color: #CDF1E3;
 
 body{
     padding:25px;
-    height: auto;
 }
 
 input:focus{
      outline: none;
- }
+}
  
- form{
-     margin-top: 112px;
+ .card{
+     margin-top: 199px;
+     //width: 35%;
      margin-left:auto;
      margin-right:auto;
      padding:50px;
@@ -23,20 +23,25 @@ input:focus{
  }
 
  body, html {
-    height: auto;
+    height: 100%;
     margin: 0;
   }
   
   .bg {
+    background-image: url("../../assets/img/foret1.jpg");
     top: 0;
-    height: auto; 
+    background-color: $marron;
+    height: 100%; 
     min-height: calc(100vh - 0px);
-    background-image: url("../../assets/img/foret.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
+.container-compte {
+    width: 80%;
+    text-align: center;
+}
 
-  .form-don {
-    margin-bottom: 10%;
+.card-object {
+    margin-top: 3%;
 }
