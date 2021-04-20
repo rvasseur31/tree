@@ -36,9 +36,10 @@ import { CompteComponent } from './compte/compte.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    //CreditCardDirectivesModule,
     ToastrModule.forRoot({
-      positionClass :'toast-bottom-right'
-    })
+      positionClass: 'toast-bottom-right',
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
@@ -49,4 +50,4 @@ import { CompteComponent } from './compte/compte.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
