@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlertComponent } from './_components';
 import { ErrorInterceptor, fakeBackendProvider, JwtInterceptor } from './_helpers';
 import { CompteComponent } from './compte/compte.component';
+import { CreditCardDirectivesModule } from 'angular-cc-library';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { CompteComponent } from './compte/compte.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    //CreditCardDirectivesModule,
+    CreditCardDirectivesModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
     }),
@@ -46,7 +48,8 @@ import { CompteComponent } from './compte/compte.component';
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
     // provider used to create fake backend
-    fakeBackendProvider
+    fakeBackendProvider,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

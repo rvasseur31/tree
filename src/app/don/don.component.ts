@@ -2,7 +2,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { config } from 'src/assets/config/config';
 import { AccountService, AlertService } from '../_services';
+import { IDon } from './don.interface';
 
 @Component({
   selector: 'app-don',
@@ -40,8 +43,10 @@ export class DonComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private accountService: AccountService,
-    private alertService: AlertService
-    ) { }
+    private alertService: AlertService,
+    private http: HttpClient,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -58,16 +63,23 @@ export class DonComponent implements OnInit {
     });
   }
 
-  onSubmit(form: { value: { [x: string]: any; }; }) {
-    const name = form.value['name'];
-    const montant = form.value['montant'];
-
-    // GET USER INFO
-    // .email .username .id
+  onSubmit(form: { value: IDon }) {
+    const amount = form.value.amount;
     const user = this.accountService.userValue;
-
-    // POST_(name, montant, email, ...)
-    alert("Merci pour votre don de " + montant + "€, Monsieur " + user.username);
+    const headers = new HttpHeaders({
+      Authorization:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYxNzcwNjQ5NCwiZXhwIjoxNjE3NzEwMDk0fQ.br3_gLkTo5-DQMJo0dKQJj-pHc0gI9axAXmtq7ikkzA',
+    });
+    this.http
+      .post<IDon>(`${config.api.API_FULL_URL}/api/donation`, form.value, {headers})
+      .subscribe(
+        (data) =>
+          this.toastr.success(`Merci ` + user.username + ` pour votre don de ${amount} €`),
+        (error) => {
+          console.log(error)
+          return this.toastr.error("Erreur lors de l'envoie de votre don");
+        }
+      );
   }
 
   onReset(form: { reset: () => void }) {
