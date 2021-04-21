@@ -24,7 +24,6 @@ export class RegisterComponent implements OnInit {
         this.form = this.formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
-            username: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]],
             email: ['', Validators.required, Validators.email],
             role: ['0']
@@ -51,7 +50,8 @@ export class RegisterComponent implements OnInit {
             .subscribe({
                 next: () => {
                     this.alertService.success('Registration successful', { keepAfterRouteChange: true });
-                    this.router.navigate(['../login'], { relativeTo: this.route });
+                    const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+                    this.router.navigateByUrl(returnUrl);
                 },
                 error: error => {
                     this.alertService.error(error);

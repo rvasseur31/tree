@@ -74,7 +74,7 @@ export class DonComponent implements OnInit {
       .post<IDon>(`${config.api.API_FULL_URL}/api/donation`, form.value, {headers})
       .subscribe(
         (data) =>
-          this.toastr.success(`Merci ` + user.username + ` pour votre don de ${amount} €`),
+          this.toastr.success(`Merci ` + user.firstName + ` pour votre don de ${amount} €`),
         (error) => {
           console.log(error)
           return this.toastr.error("Erreur lors de l'envoie de votre don");

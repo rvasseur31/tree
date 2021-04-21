@@ -11,8 +11,8 @@ import { IContact } from '../resources/contact/contact.interface';
 })
 export class ContactComponent implements OnInit {
   contact: IContact = {
-    firstname: '',
-    lastname: '',
+    firstName: '',
+    lastName: '',
     email: '',
     subject: '',
     message: '',

@@ -13,7 +13,10 @@ export class AppComponent {
   user!: User;
 
   constructor(private accountService: AccountService) {
-      this.accountService.user.subscribe(x => this.user = x);
+      this.accountService.user.subscribe(user => {
+        console.log(user)
+        return this.user = user;
+      });
   }
 
   logout() {
@@ -21,10 +24,7 @@ export class AppComponent {
   }
 
   isDisconnected() {
-    if (this.user == null) {
-      return true;
-    }
-    return false;
+    return !this.isConnected();
   }
 
   isConnected() {

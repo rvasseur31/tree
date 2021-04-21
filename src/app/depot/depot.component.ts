@@ -63,7 +63,7 @@ export class DepotComponent implements OnInit {
         { headers }
       )
       .subscribe(
-        (data) => this.toastr.success(`Merci ${user.username} pour votre don`),
+        (data) => this.toastr.success(`Merci ${user.firstName} pour votre don`),
         (error) => {
           console.log(error);
           return this.toastr.error("Erreur lors de l'envoie de votre don");
