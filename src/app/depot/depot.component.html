@@ -1,40 +1,60 @@
 <div class="bg">
-    <div style="display:flex;width:100%;">
-      <div class="container don">
-        <form [formGroup]="myForm" #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-don">
-          <h2 class="text-center">Déposer un objet</h2>
-            <div class="row">
-              <fieldset class="w-100">
-                <div class="form-group">
-                    <label for="name" class="control-label">Nom de l'objet</label>
-                    <input formControlName="name" id="name" type="text" class="form-control" id="name" required placeholder="Nom">
-                </div>
-
-                <div class="form-group">
-                    <label for="brand" class="control-label">Marque de l'objet</label>
-                    <input formControlName="brand" id="brand" type="text" class="form-control" id="brand" required placeholder="Marque">
-                </div>
-
-                <div class="form-group">
-                    <label for="date" class="control-label">Année d'achat de l'objet</label>
-                    <input formControlName="date" id="date" type="month" class="form-control" id="date" required placeholder="Année d'achat">
-                </div>
-
-                <div class="form-group">
-                    <label for="state" class="control-label">État de l'objet</label>
-                    <input formControlName="state" id="state" type="state" class="form-control" id="state" required placeholder="État">
-                </div>
-                
-                <div class="form-group">
-                  <div class="col-md-12 text-xs-right text-center">
-                    <button type="button" class="btn btn-secondary" (click)="onReset(f)">Cancel</button>
-                    <button id="send-button" type="submit" class="btn btn-primary ml-1" [disabled]="f.invalid">Submit</button>
-                  </div>
-              </div>
-            </fieldset>
-
+  <div style="display:flex;width:100%;">
+    <div class="container don">
+      <form [formGroup]="myForm" #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-don">
+        <h2 class="text-center">Déposer un objet</h2>
+        <div class="row">
+          <fieldset class="w-100">
+            <div class="form-group">
+              <label for="type" class="control-label">Type de produit</label>
+              <select class="custom-select" formControlName="type">
+                <option value="laptop">Ordinateur portable</option>
+                <option value="computer">Ordinateur de bereau</option>
+                <option value="mobile">Téléphone portable</option>
+                <option value="computer_screen">Ecran d'ordinateur</option>
+                <option value="headphone">Casque</option>
+              </select>
             </div>
-        </form>
+            <div class="form-group">
+              <label for="name" class="control-label">Nom de l'objet</label>
+              <input formControlName="name" id="name" type="text" class="form-control" id="name" required
+                placeholder="Nom">
+            </div>
+
+            <div class="form-group">
+              <label for="brand" class="control-label">Marque de l'objet</label>
+              <input formControlName="brand" id="brand" type="text" class="form-control" id="brand" required
+                placeholder="Marque">
+            </div>
+
+            <div class="form-group">
+              <label for="year" class="control-label">Année d'achat de l'objet</label>
+              <input formControlName="year" id="year" class="form-control" required type="number" min="1900" max="2022" step="1" value="2021"
+                placeholder="Année d'achat">
+            </div>
+
+            <div class="form-group">
+              <label for="state" class="control-label">État de l'objet</label>
+              <select class="custom-select" formControlName="state">
+                <option value="not-working">Ne marche plus</option>
+                <option value="broken">Cassé</option>
+                <option value="scratch">Rayure</option>
+                <option value="micro-scratch">Petite rayure</option>
+                <option value="intact">Intacte</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12 text-xs-right text-center">
+                <button type="button" class="btn btn-secondary" (click)="onReset(f)">Cancel</button>
+                <button id="send-button" type="submit" class="btn btn-primary ml-1"
+                  [disabled]="f.invalid">Submit</button>
+              </div>
+            </div>
+          </fieldset>
+
+        </div>
+      </form>
     </div>
-    </div>
+  </div>
 </div>
