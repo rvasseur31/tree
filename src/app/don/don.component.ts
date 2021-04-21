@@ -67,8 +67,7 @@ export class DonComponent implements OnInit {
     const amount = form.value.amount;
     const user = this.accountService.userValue;
     const headers = new HttpHeaders({
-      Authorization:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYxNzcwNjQ5NCwiZXhwIjoxNjE3NzEwMDk0fQ.br3_gLkTo5-DQMJo0dKQJj-pHc0gI9axAXmtq7ikkzA',
+      Authorization: user.token,
     });
     this.http
       .post<IDon>(`${config.api.API_FULL_URL}/api/donation`, form.value, {headers})

@@ -51,11 +51,11 @@ export class DepotComponent implements OnInit {
 
   onSubmit(form: { value: IDepot }) {
     const user = this.accountService.userValue;
-    console.log(form.value)
     const headers = new HttpHeaders({
-      Authorization:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYxNzcwNjQ5NCwiZXhwIjoxNjE3NzEwMDk0fQ.br3_gLkTo5-DQMJo0dKQJj-pHc0gI9axAXmtq7ikkzA',
+      Authorization: user.token,
     });
+    console.log(form.value);
+    console.log(headers)
     this.http
       .post<IDepot>(
         `${config.api.API_FULL_URL}/api/device/add-device`,
