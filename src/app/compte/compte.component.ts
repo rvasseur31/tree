@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { IDepot } from '../depot/depot.interface';
 import { IDon } from '../don/don.interface';
@@ -14,7 +15,7 @@ export class CompteComponent implements OnInit {
 
   user: User;
   moneyDonated: number = 0;
-  devicesDonated: string[] = [];
+  devicesDonated: IDepot[] = [];
   plantedTree: number = 0;
 
   constructor(private accountService: AccountService) { }
@@ -27,7 +28,7 @@ export class CompteComponent implements OnInit {
         this.moneyDonated += donation.amount;
       });
       data.body.devices.forEach((device: IDepot) => {
-        this.devicesDonated.push(device.name);
+        this.devicesDonated.push(device);
       });
     });
   }
