@@ -67,7 +67,7 @@ export class AccountService {
 
   getDataById(id: string) {
     const headers = {Authorization: this.userValue.token}
-    return this.http.post(`${config.api.API_FULL_URL}/api/user/data/${id}`,null , {headers});
+    return this.http.post(`${config.api.API_FULL_URL}/api/user/data/`,null , {headers});
   }
 
   getById(id: string) {
