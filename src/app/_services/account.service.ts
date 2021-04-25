@@ -65,6 +65,11 @@ export class AccountService {
     return this.http.get<User[]>(`${environment.apiUrl}/users`);
   }
 
+  getDataById(id: string) {
+    const headers = {Authorization: this.userValue.token}
+    return this.http.post(`${config.api.API_FULL_URL}/api/user/data/${id}`,null , {headers});
+  }
+
   getById(id: string) {
     return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
   }

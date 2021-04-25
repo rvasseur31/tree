@@ -7,7 +7,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Donation</h5>
                   <p class="card-text">Nombre d'argent donné</p>
-                  <a href="#" class="btn btn-primary">Amount</a>
+                  <a href="#" class="btn btn-primary">{{moneyDonated}}</a>
                 </div>
               </div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Arbre planté</h5>
                   <p class="card-text">Nombre d'arbre planté grâce aux dons</p>
-                  <a href="#" class="btn btn-primary">Amount</a>
+                  <a href="#" class="btn btn-primary">{{plantedTree}}</a>
                 </div>
               </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Special title treatment</h5>
                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Liste</a>
+                  <a href="#" class="btn btn-primary"><p *ngFor="let device of devicesDonated">{{device}}</p></a>
                 </div>
               </div>
     </div>
