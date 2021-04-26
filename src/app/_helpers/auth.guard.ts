@@ -22,15 +22,15 @@ export class AuthGuard implements CanActivate {
         return false;
     }
 
-    isAdmin(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        const user = this.accountService.userValue;
+    // isAdmin() {
+    //     const user = this.accountService.userValue;
 
-        if (user) {
-            if (user.role == 1 /* "admin" */) {
-                return true;
-            }
-            return false;
-        }
-        return false;
-    }
+    //     if (user) {
+    //         if (user.role == "admin") {
+    //             return true;
+    //         }
+    //         return false;
+    //     }
+    //     return false;
+    // }
 }

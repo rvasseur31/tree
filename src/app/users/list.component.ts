@@ -6,14 +6,15 @@ import { AccountService } from '../_services';
 @Component({ templateUrl: 'list.component.html' })
 export class ListComponent implements OnInit {
     
-    users = null;
+    users = [];
 
     constructor(private accountService: AccountService) {}
 
     ngOnInit() {
+        this.users = [];
         // this.accountService.getAll()
         //     .pipe(first())
-        //     .subscribe(users =>this.users = users);
+        //     .subscribe(users => this.users = users);
     }
 
     deleteUser(id: string) {
