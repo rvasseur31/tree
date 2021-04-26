@@ -5,6 +5,7 @@ export class IUser {
   email: string;
   phoneNumber: string;
   password: string;
+  role: number;
 
   constructor(
     firstName: string,
