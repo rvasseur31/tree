@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
             .pipe(first())
             .subscribe({
                 next: () => {
-                    this.alertService.success('Registration successful', { keepAfterRouteChange: true });
+                    this.alertService.success('Inscription réussi', { keepAfterRouteChange: true });
                     const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
                     this.router.navigateByUrl(returnUrl);
                 },
