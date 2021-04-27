@@ -1,25 +1,44 @@
-<div class="form-container">
-    <form>
-        <div class="mb-3 form-subject">
-            <label for="firstName" class="form-label">Prénom</label>
-            <input [(ngModel)]="contact.firstName" name="firstName" type="text" class="form-control" id="firstName">
+<div class="bg">
+    <div style="display:flex;width:100%;">
+        <div class="container don">
+            <form class="form-don">
+                <h2 class="text-center">Contact</h2>
+                <div class="row">
+                    <fieldset class="col-md-12">
+                        <div class="form-group">
+                            <label for="firstName" class="control-label">Prénom</label>
+                            <input [(ngModel)]="contact.firstName" name="firstName" type="text" class="form-control"
+                                id="firstName">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName" class="control-label">Nom</label>
+                            <input [(ngModel)]="contact.lastName" name="lastName" type="text" class="form-control"
+                                id="lastName">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="control-label">Adresse Mail</label>
+                            <input [(ngModel)]="contact.email" name="email" type="email" class="form-control"
+                                id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="control-label">Sujet</label>
+                            <input [(ngModel)]="contact.subject" name="subject" type="text" class="form-control"
+                                id="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="control-label">Message</label>
+                            <textarea [(ngModel)]="contact.message" class="form-control" name="message" id="message"
+                                rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 text-xs-right text-center">
+                                <button type="submit" class="btn btn-primary"
+                                    (click)="sendContactForm()">Envoyer</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
         </div>
-        <div class="mb-3 form-subject">
-            <label for="lastName" class="form-label">Nom</label>
-            <input [(ngModel)]="contact.lastName" name="lastName" type="text" class="form-control" id="lastName">
-        </div>
-        <div class="mb-3 form-subject">
-            <label for="email" class="form-label">Adresse Mail</label>
-            <input [(ngModel)]="contact.email" name="email" type="email" class="form-control" id="email">
-        </div>
-        <div class="mb-3 form-subject">
-            <label for="subject" class="form-label">Sujet</label>
-            <input [(ngModel)]="contact.subject" name="subject" type="text" class="form-control" id="subject">
-        </div>
-        <div class="mb-3 form-subject">
-            <label for="message" class="form-label">Message</label>
-            <textarea [(ngModel)]="contact.message" class="form-control" name="message" id="message" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" (click)="sendContactForm()">Submit</button>
-    </form>
+    </div>
 </div>

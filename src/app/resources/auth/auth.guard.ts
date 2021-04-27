@@ -14,4 +14,4 @@ export class AuthGuard implements CanLoad {
     segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
     return true; //verification admin
   }
-}
+}""

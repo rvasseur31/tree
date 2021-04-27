@@ -1,0 +1,51 @@
+<div class="bg">
+  <div style="display:flex;width:100%;justify-content: center;">
+    <div class="container-compte">
+      <div class="row">
+        <div class="col-sm-6" style="padding: 0;">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Donation</h5>
+              <p class="card-text">Nombre d'argent donné</p>
+              <a class="btn btn-primary">{{moneyDonated}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6" style="padding: 0;">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Arbre planté</h5>
+              <p class="card-text">Nombre d'arbre planté grâce aux dons</p>
+              <a class="btn btn-primary">{{plantedTree}}</a>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="devicesDonated.length" class="card card-object" style="width: 100%;">
+          <div class="card-header">
+            Liste d'objet données
+          </div>
+          <div class="card-body">
+            <div class="container">
+              <div class="row d-flex justify-content-center">
+                <div *ngFor="let device of devicesDonated">
+                  <div class="col-6 col-md-4" class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ device.name}}</h5>
+                      <div class="card-text">
+                        <ul>
+                          <li>Type d'appareil : {{ device.type }}</li>
+                          <li>Année de l'appareil : {{ device.year }}</li>
+                          <li>Etat de l'appareil : {{ device.state }}</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

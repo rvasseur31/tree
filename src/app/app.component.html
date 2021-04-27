@@ -1,35 +1,38 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="../assets/img/stalys.png" alt="logo-stalys">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Déposer un produit</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Faire un don</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <button class="btn btn-outline-success right-button" type="submit">Sign-in</button>
-          <button class="btn btn-outline-success ms-2 right-button" type="submit">Login</button>
-        </form>
-      </div>
+  <nav class="navbar navbar-expand-md fixed-top">
+    <a class="navbar-brand" class="navbar-brand" routerLink="accueil">
+      <img src="../assets/img/stalys.png" alt="logo-stalys">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="navbar-toggler-icon fa fa-bars icon-navbar"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLinkActive="active" routerLink="depot">Déposer un produit</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="don">Don</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="contact">Contact</a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <div *ngIf="isDisconnected()">
+          <button class="btn btn-outline-success my-2 my-sm-0 btn-nav" type="submit" routerLink="login">Connexion</button>
+          <button class="btn btn-outline-success my-2 my-sm-0 ml-2 btn-nav" type="submit" routerLink="register">S'enregistrer</button>
+        </div>
+        <div *ngIf="isConnected()">
+          <button class="btn btn-outline-success my-2 my-sm-0 ml-2 btn-nav" type="submit" routerLink="compte">{{ user.firstName }}</button>
+          <button class="btn btn-outline-success my-2 my-sm-0 ml-2 btn-nav" type="submit" (click)="logout()">Déconnexion</button>
+        </div>
+      </form>
     </div>
   </nav>
 </header>
 
-
+<alert></alert>
 <router-outlet></router-outlet>
 
 <footer class="footer mt-auto py-3">
@@ -37,3 +40,20 @@
     <span class="text-muted">Copyright 2021 © Stalys</span>
   </div>
 </footer>
+
+<script>
+  (function () {
+  'use strict'
+
+  if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+    var msViewportStyle = document.createElement('style')
+    msViewportStyle.appendChild(
+      document.createTextNode(
+        '@-ms-viewport{width:auto!important}'
+      )
+    )
+    document.head.appendChild(msViewportStyle)
+  }
+
+}())
+</script>

@@ -1,0 +1,43 @@
+$marron: #7e5835;
+$vert: #145f37;
+$background-color: #cdf1e3;
+
+body {
+  padding: 25px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.card {
+  margin: 8px;
+  background: whitesmoke;
+  border-radius: 5px;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  background-image: url("../../assets/img/foret1.jpg");
+  top: 0;
+  background-color: $marron;
+  height: 100%;
+  min-height: calc(100vh - 0px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container-compte {
+  width: 80%;
+  text-align: center;
+}
+
+.card-object {
+  margin-top: 3%;
+}

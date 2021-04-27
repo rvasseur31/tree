@@ -1,28 +1,27 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { User } from '../user/user.model';
+import { IUser } from '../user/user.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  private currentUser: User | undefined = undefined;
-  public currentUser$: BehaviorSubject<User | undefined> = new BehaviorSubject<
-    User | undefined
-  >(this.currentUser);
+  private currentUser: IUser | undefined = undefined;
+  public currentUser$: BehaviorSubject<IUser | undefined> = new BehaviorSubject<IUser | undefined>(this.currentUser);
 
   constructor() {}
 
-  getcurrentUser(): User | undefined {
+  getcurrentUser(): IUser | undefined {
     return this.currentUser;
   }
 
-  login(email: string, password: string): User | undefined {
+  login(email: string, password: string): IUser | undefined {
     const user = undefined;
 
     console.log('User : ', user);
     this.currentUser = user;
     this.currentUser$.next(this.currentUser);
+    
     return user;
   }
 

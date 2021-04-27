@@ -1,0 +1,53 @@
+$marron: #7e5835;
+$vert: #145f37;
+$background-color: #CDF1E3;
+
+body{
+    padding:25px;
+}
+
+input:focus{
+     outline: none;
+ }
+ 
+ form{
+     //width: 35%;
+     margin-left:auto;
+     margin-right:auto;
+     padding:50px;
+     background:whitesmoke;
+     border-radius:5px;
+     position:relative;
+     font-family: 'Libre Franklin', sans-serif;
+ }
+
+ body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .bg {
+    background: rgb(20,95,55);
+    background: linear-gradient(0deg, rgba(20,95,55,1) 0%, rgba(255,255,255,1) 100%);
+    top: 0;
+    height: 100%; 
+    min-height: calc(100vh - 0px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .form-don {
+    margin-bottom: 10%;
+}
+
+.card {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card-login {
+  width: 1140px;
+  margin-top: 10%;
+  margin-bottom: auto;
+}

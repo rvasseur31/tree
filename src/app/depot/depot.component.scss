@@ -1,0 +1,42 @@
+$marron: #7e5835;
+$vert: #145f37;
+$background-color: #CDF1E3;
+
+body{
+    padding:25px;
+    height: auto;
+}
+
+input:focus{
+     outline: none;
+ }
+ 
+ form{
+     margin-top: 112px;
+     margin-left:auto;
+     margin-right:auto;
+     padding:50px;
+     background:whitesmoke;
+     border-radius:5px;
+     position:relative;
+     font-family: 'Libre Franklin', sans-serif;
+ }
+
+ body, html {
+    height: auto;
+    margin: 0;
+  }
+  
+  .bg {
+    top: 0;
+    height: auto; 
+    min-height: calc(100vh - 0px);
+    background-image: url("../../assets/img/foret.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .form-don {
+    margin-bottom: 10%;
+}

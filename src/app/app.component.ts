@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
+import { AccountService } from './_services';
+import { User } from './_models';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,28 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tree';
-  faCoffee = faCoffee;
+
+  user!: User;
+
+  constructor(private accountService: AccountService) {
+      this.accountService.user.subscribe(user => {
+        console.log(user)
+        return this.user = user;
+      });
+  }
+
+  logout() {
+      this.accountService.logout();
+  }
+
+  isDisconnected() {
+    return !this.isConnected();
+  }
+
+  isConnected() {
+    if (this.user != null) {
+      return true;
+    }
+    return false;
+  }
 }
